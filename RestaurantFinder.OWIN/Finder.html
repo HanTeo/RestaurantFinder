@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Restaurant Finder</title>
+</head>
+<body>
+    <span>
+        <input id="searchTxt">
+        <button id="myButton">Find</button>
+    </span>
+<table id="results">
+    <tr><td>Name</td><td>Cuisine Type</td><td>Ratings</td></tr>
+    @Each
+    <tr>
+        <td>@Current.Name</td>
+        <td>@Current.Cuisines</td>
+        <td>@Current.RatingStars</td>
+    </tr>
+    @EndEach
+</table>
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function() {
+        location.href = "http://localhost:8080/restaurants/" + document.getElementById("searchTxt").value;
+    };
+</script>
+</body>
+</html>
